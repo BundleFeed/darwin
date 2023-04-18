@@ -1,9 +1,10 @@
 import macros
 
 {.passL: "-framework Foundation".}
+{.passC: "-Wno-incompatible-function-pointer-types".}
 
 type
-    NSObject* = ptr object {.pure, inheritable.}
+    NSObject* {.pure, inheritable.} = ptr object 
     ObjcClass = ptr object of NSObject
 
     NSString* = ptr object of NSObject
